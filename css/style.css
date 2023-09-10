@@ -1,0 +1,215 @@
+/* CLICAR EM CIMA E VER SE TEM CÓDIGO REPETIDO, SE TIVER, CRIAR UM SELETOR/OU CLASSE PARA TAL */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /* rolagem mais suave */
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family: sans-serif;
+    line-height: 1.5;
+}
+
+a {
+    /* white-space: nowrap; se não houver mais espaço, o link não quebra (fica uma palavra em cima e outra em baixo), agora eles são grudados */
+    white-space: nowrap;
+    /* transition: color 0.2s; adiciona um delay de 2 segundos para aparecer o hover */
+    transition: color 0.2s;
+    /* text-decoration: none; retira o sublinhado do link */
+    text-decoration: none;
+}
+
+h2{
+    margin-bottom: 32px;
+    /* solid é tipo de borda, tem dashed (risquinhos, dotted (bolinhas)...  */
+    border-left: 4px solid #f13239;
+    padding-left: 8px;
+}
+.dark{
+    background-color: #111111;
+    color: #ebebeb;
+}
+
+/* uso o container para centralizar tudo de uma vez só */
+.container{
+    max-width: 1200px;
+    /* quando se coloca "auto" empurra o elemento para o centro */
+    /* primeiro elemento é o topo, segundo as laterais e terceiro em baixo */
+    margin: 0 auto;
+}
+
+.dark-link{
+    color: #bd0202;
+    text-decoration: none;
+}
+
+.dark-link:hover,
+.dark-link:focus{
+    color: #f13239;
+}
+
+.text-center{
+    text-align: center;
+}
+header{
+    padding: 8px 24px;
+    /* display: flex; faz com que as linhas não sejam em blocos, e sim uma ao lado da outra */
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    /* justify-content: space-around; espaça itens de uma mesma linha */
+    justify-content: space-around;
+    padding-top: 17px;
+
+    /* row é espaço entre linhas, e column entre colunas */
+    row-gap: 8px;
+    column-gap: 24px;
+
+}
+
+header img{
+    width: 180px;
+}
+
+header ul {
+    /* list-style: none; retira as bolinhas das listas */
+    list-style: none;
+    display: flex;
+}
+
+/* header ul li + li{ (+li significa que só irá aplicar quando tiver um li na frente */
+header ul li + li{
+    margin-left: 24px;
+}
+
+header a{
+    color: #ebebeb;
+}
+
+/* focus é quando troca o seletor pelo TAB */
+header a:hover,
+header a:focus{
+    color: #f13239;
+}
+
+.hero{
+    /* background-image: url(../img/banner.jpg); utiliza uma imagem de fundo ao invés de cor */
+    background-image: url(../img/banner.jpg);
+    /* background-size: cover; ajusta a imagem de acordo com o tamanho da tela */
+    background-size: cover;
+    /* background-position: center 25%; define de que ponto começa a corta a imagem */
+    background-position: center 25%;
+
+    height: 320px;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; coloca o item no centro */
+    justify-content: flex-end;
+    /* flex-end coloca o item para baixo */
+    align-items: center;
+
+    /* caso não funcione  justify-content e align-items, inverta o que ta escrito depois*/
+}
+
+.hero h1{
+    color: #ebebeb;
+    font-size: 36px;
+    text-shadow: 1px 2px 1px #111111;
+}
+
+.dots{
+    margin-top: 15px;
+    display: flex;
+}
+
+.dots button{
+    background-color: #ebebeb;
+
+    /* cursor: pointer; coloca a mãozinha */
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: none;
+    
+}
+
+.dots button + button{
+    margin-left: 8px;
+    
+}
+
+.dots .ativado{
+    background-color: #f13239;
+    
+}
+
+.gallery{
+    padding: 64px 24px 96px;
+}
+
+.gallery h2{
+    color: #111111;
+}
+
+.gallery-row{
+    display: flex;
+    /* flex-wrap: wrap; faz com que quando não tem espaço ao lado o item vá para baixo */
+    flex-wrap: wrap;
+    gap: 24px;
+}
+
+/* .gallery-row div{ determina que tudo que tiver ali ocupe no máximo 200px */
+.gallery-row figure{
+    /* primeiro elemento estica, o segundo encolhe, terceiro é tamanho base  */
+    flex: 1 0 250px;
+}
+
+/* .gallery-row img{ determina que a img tenha o tamanho de 100% mesmo estando dentro de 200px */
+.gallery-row figure img{
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.gallery figcaption{
+    font-weight: bold;
+}
+
+.history {
+    padding: 92px 24px 0;
+    border-top: 4px solid #f13239;
+}
+
+.history .container{
+    gap: 24px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    /* border-bottom: 2px solid #f13239; os 2px é referente a grossura da borda */
+    border-bottom: 2px solid #f13239;
+}
+
+.history .container .coluna{
+    flex: 1 1 350px;
+}
+
+.history img{
+    width: 100%;
+    display: block;
+}
+
+.history p + p{
+    margin-top: 24px;
+}
+
+footer{
+    padding: 64px 24px;
+}
